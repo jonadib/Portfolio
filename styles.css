@@ -6,6 +6,17 @@
     --bg-base: #000000;
     --bg-secondary: #0A1121;
     --bg-section: #000000;
+
+    /* Section Shade Tones (Dark Opacity) */
+    --bg-midnight: rgba(10, 14, 23, 0.85);
+    /* Deep Navy Tint */
+    --bg-void: rgba(5, 5, 5, 0.9);
+    /* Almost Pure Black */
+    --bg-charcoal: rgba(15, 16, 18, 0.85);
+    /* Neutral Slate */
+    --bg-cosmic: rgba(8, 12, 20, 0.88);
+    /* Deep Space Blue */
+
     --bg-glass: rgba(255, 255, 255, 0.03);
     --bg-navbar: rgba(10, 17, 33, 0.4);
     --nav-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
@@ -373,12 +384,14 @@ section {
    ABOUT SECTION
    ======================================== */
 .about {
-    background: var(--bg-base);
+    background: var(--bg-midnight);
+    backdrop-filter: blur(10px);
     z-index: 10;
 }
 
 .projects {
-    background: var(--bg-base);
+    background: var(--bg-void);
+    backdrop-filter: blur(10px);
     z-index: 10;
 }
 
@@ -755,7 +768,8 @@ section {
    ACHIEVEMENTS / CONTACT SECTION
    ======================================== */
 .achievements {
-    background: #000000;
+    background: var(--bg-charcoal);
+    backdrop-filter: blur(10px);
     z-index: 10;
 }
 
