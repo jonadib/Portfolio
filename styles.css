@@ -31,24 +31,6 @@
     --nav-blur: blur(20px);
 }
 
-/* Light Mode Overrides */
-body.light-mode {
-    --bg-base: #F8FAFC;
-    --bg-secondary: #F1F5F9;
-    --bg-section: #FFFFFF;
-    --bg-glass: rgba(0, 0, 0, 0.04);
-    --bg-navbar: rgba(255, 255, 255, 0.9);
-    --nav-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    --border-color: rgba(0, 0, 0, 0.12);
-
-    --text-heading: #0F172A;
-    --text-body: #1E293B;
-    --text-muted: #64748B;
-    --text-white: #0F172A;
-
-    --accent-glow: rgba(45, 212, 191, 0.08);
-    --gradient-nebula: radial-gradient(circle at center, rgba(45, 212, 191, 0.08) 0%, rgba(56, 189, 248, 0.04) 50%, transparent 100%);
-}
 
 /* ========================================
    GLOBAL STYLES
@@ -336,11 +318,11 @@ body {
 .btn-secondary {
     background: transparent;
     color: var(--text-heading);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--border-color);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-glass);
     border-color: var(--sky-accent);
     color: var(--sky-accent);
 }
@@ -361,7 +343,7 @@ body {
 section {
     padding: 100px 0;
     position: relative;
-    background: #000000;
+    background: var(--bg-section);
     z-index: 5;
 }
 
@@ -391,12 +373,12 @@ section {
    ABOUT SECTION
    ======================================== */
 .about {
-    background: #000000;
+    background: var(--bg-base);
     z-index: 10;
 }
 
 .projects {
-    background: #000000;
+    background: var(--bg-base);
     z-index: 10;
 }
 
@@ -1106,15 +1088,14 @@ section {
     .about-image {
         order: -1;
     }
-}
 
-.skills-grid {
-    grid-template-columns: 1fr;
-}
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 
-section {
-    padding: 3rem 0;
-}
+    section {
+        padding: 3rem 0;
+    }
 }
 
 /* ========================================
