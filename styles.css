@@ -131,8 +131,8 @@ body {
 }
 
 .nav-link.active {
-    color: var(--sky-accent);
-    background: rgba(56, 189, 248, 0.1);
+    color: var(--teal-accent);
+    background: rgba(45, 212, 191, 0.1);
 }
 
 /* ========================================
@@ -392,7 +392,7 @@ section {
 }
 
 .detail-item h4 {
-    color: var(--sky-accent);
+    color: var(--teal-accent);
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
