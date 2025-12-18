@@ -250,7 +250,7 @@ body {
 
 .hero-subtitle {
     font-size: clamp(1.2rem, 5vw, 1.8rem);
-    color: var(--teal-accent);
+    color: #FFFFFF;
     margin-bottom: 3.5rem;
     font-weight: 500;
     letter-spacing: 1px;
@@ -260,7 +260,7 @@ body {
 .cursor {
     font-weight: 300;
     animation: blink 0.7s infinite;
-    color: var(--teal-accent);
+    color: #FFFFFF;
     margin-left: 2px;
 }
 
