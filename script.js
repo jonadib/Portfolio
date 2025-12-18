@@ -1,66 +1,6 @@
 // ========================================
 // STARFIELD ANIMATION
 // ========================================
-class Starfield {
-    constructor() {
-        this.canvas = document.createElement('canvas');
-        this.ctx = this.canvas.getContext('2d');
-        this.stars = [];
-        this.numStars = 400;
-
-        this.init();
-        this.animate();
-
-        window.addEventListener('resize', () => this.resize());
-    }
-
-    init() {
-        this.canvas.style.position = 'fixed';
-        this.canvas.style.top = '0';
-        this.canvas.style.left = '0';
-        this.canvas.style.width = '100%';
-        this.canvas.style.height = '100%';
-        this.canvas.style.zIndex = '0';
-        this.canvas.style.pointerEvents = 'none';
-        document.body.prepend(this.canvas);
-        this.resize();
-
-        for (let i = 0; i < this.numStars; i++) {
-            this.stars.push({
-                x: Math.random() * this.canvas.width,
-                y: Math.random() * this.canvas.height,
-                size: Math.random() * 2,
-                speed: Math.random() * 0.5,
-                opacity: Math.random()
-            });
-        }
-    }
-
-    resize() {
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight;
-    }
-
-    animate() {
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.fillStyle = '#ffffff';
-
-        this.stars.forEach(star => {
-            this.ctx.globalAlpha = star.opacity;
-            this.ctx.beginPath();
-            this.ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-            this.ctx.fill();
-
-            star.y -= star.speed;
-            if (star.y < 0) {
-                star.y = this.canvas.height;
-                star.x = Math.random() * this.canvas.width;
-            }
-        });
-
-        requestAnimationFrame(() => this.animate());
-    }
-}
 
 // ========================================
 // TYPEWRITER EFFECT
@@ -201,7 +141,6 @@ class MilkyWaySwarm {
 
 // Initialize on Load
 document.addEventListener('DOMContentLoaded', () => {
-    new Starfield();
     new MilkyWaySwarm();
     setTimeout(type, 1000);
 
