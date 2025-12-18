@@ -193,7 +193,7 @@ body {
 .hero-greeting {
     font-size: 1.1rem;
     font-weight: 500;
-    color: var(--sky-accent);
+    color: #FFFFFF;
     margin-bottom: 0.5rem;
     letter-spacing: 2px;
 }
