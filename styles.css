@@ -248,7 +248,7 @@ body {
 }
 
 .robotic {
-    font-family: 'Orbitron', sans-serif;
+    font-family: inherit;
     font-weight: 800;
     text-transform: uppercase;
     background: linear-gradient(135deg, #2DD4BF 0%, #38BDF8 25%, #A78BFA 50%, #38BDF8 75%, #2DD4BF 100%);
@@ -1313,12 +1313,12 @@ section {
 
 /* Left to Right Animation */
 .row-ltr .marquee-content {
-    animation: scroll-ltr 40s linear infinite;
+    animation: scroll-ltr 15s linear infinite;
 }
 
 /* Right to Left Animation */
 .row-rtl .marquee-content {
-    animation: scroll-rtl 40s linear infinite;
+    animation: scroll-rtl 15s linear infinite;
 }
 
 @keyframes scroll-ltr {
