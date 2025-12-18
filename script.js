@@ -48,19 +48,40 @@ class MilkyWaySwarm {
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
         this.mouse = { x: 0, y: 0, active: false };
-        this.numParticles = 1200; // Massively increased for dense vortex
+        this.numParticles = 3000; // Extreme density
         this.angle = 0;
 
         this.init();
         this.animate();
 
         window.addEventListener('resize', () => this.resize());
-        window.addEventListener('mousemove', (e) => {
-            const rect = this.canvas.getBoundingClientRect();
-            this.mouse.x = e.clientX - rect.left;
-            this.mouse.y = e.clientY - rect.top;
-            this.mouse.active = true;
+
+        // Mouse Events
+        window.addEventListener('mousemove', (e) => this.handlePointer(e.clientX, e.clientY));
+
+        // Touch Events
+        window.addEventListener('touchstart', (e) => {
+            if (e.touches.length > 0) {
+                this.handlePointer(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: true });
+
+        window.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 0) {
+                this.handlePointer(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: true });
+
+        window.addEventListener('touchend', () => {
+            this.mouse.active = false;
         });
+    }
+
+    handlePointer(x, y) {
+        const rect = this.canvas.getBoundingClientRect();
+        this.mouse.x = x - rect.left;
+        this.mouse.y = y - rect.top;
+        this.mouse.active = true;
     }
 
     init() {
@@ -82,12 +103,14 @@ class MilkyWaySwarm {
         return {
             x: this.canvas.width / 2 + Math.cos(angle) * radius,
             y: this.canvas.height / 2 + Math.sin(angle) * (radius * 0.6),
-            size: Math.random() * 1.5 + 0.3, // Slightly smaller for better density look
+            size: Math.random() * 1.2 + 0.2, // Smaller for extreme density
             angle: angle,
             radius: radius,
-            speed: (Math.random() * 0.015) + 0.005, // Varied speeds for more "circulated" look
+            speed: (Math.random() * 0.012) + 0.003,
             color: Math.random() > 0.5 ? '#2DD4BF' : (Math.random() > 0.5 ? '#A78BFA' : '#38BDF8'),
-            opacity: Math.random() * 0.6 + 0.2
+            opacity: Math.random() * 0.5 + 0.1,
+            vx: 0,
+            vy: 0
         };
     }
 
@@ -97,21 +120,19 @@ class MilkyWaySwarm {
         const centerY = this.canvas.height / 2;
 
         this.particles.forEach(p => {
-            // Update position in spiral
             p.angle += p.speed;
 
-            // Vortex motion
             let targetX = centerX + Math.cos(p.angle) * p.radius;
             let targetY = centerY + Math.sin(p.angle) * (p.radius * 0.6);
 
-            // Subtle mouse turbulence
             if (this.mouse.active) {
                 const dx = this.mouse.x - p.x;
                 const dy = this.mouse.y - p.y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 150) {
-                    targetX += (dx / dist) * 20;
-                    targetY += (dy / dist) * 20;
+                if (dist < 200) { // Larger interaction radius
+                    const force = (200 - dist) / 200;
+                    targetX -= (dx / dist) * force * 50; // Push particles away
+                    targetY -= (dy / dist) * force * 50;
                 }
             }
 
