@@ -114,6 +114,22 @@ body {
     background: rgba(255, 255, 255, 0.05);
 }
 
+/* Menu Toggle Styling */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text-heading);
+    transition: all 0.3s ease;
+}
+
 .nav-link.active {
     color: var(--teal-accent);
     background: rgba(45, 212, 191, 0.1);
@@ -936,25 +952,91 @@ section {
 }
 
 @media (max-width: 480px) {
+    .navbar {
+        top: 1rem;
+        height: 50px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Mobile Menu Overlay */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(5, 8, 15, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        padding-top: 50px;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    /* Hamburger Animation to X */
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
+        line-height: 1.1;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        padding: 0 1rem;
     }
 
-    .nav-menu {
-        display: none;
+    .hero {
+        padding: 100px 1rem 40px;
     }
 
-    .skills-grid {
+    .projects-skills-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .about-content {
         grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
     }
 
-    section {
-        padding: 3rem 0;
+    .about-image {
+        order: -1;
     }
+}
+
+.skills-grid {
+    grid-template-columns: 1fr;
+}
+
+section {
+    padding: 3rem 0;
+}
 }
 
 /* ========================================
