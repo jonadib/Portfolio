@@ -160,8 +160,56 @@ class MilkyWaySwarm {
     }
 }
 
+// ========================================
+// THEME MANAGEMENT
+// ========================================
+class ThemeManager {
+    constructor() {
+        this.themeToggle = document.getElementById('theme-toggle');
+        this.body = document.body;
+        this.currentTheme = localStorage.getItem('theme') || 'dark';
+
+        this.init();
+    }
+
+    init() {
+        // Apply saved theme
+        if (this.currentTheme === 'light') {
+            this.body.classList.add('light-mode');
+        }
+
+        // Listen for toggle click
+        if (this.themeToggle) {
+            this.themeToggle.addEventListener('click', () => this.toggleTheme());
+        }
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
+            if (!localStorage.getItem('theme')) {
+                const newTheme = e.matches ? 'light' : 'dark';
+                this.applyTheme(newTheme);
+            }
+        });
+    }
+
+    toggleTheme() {
+        const newTheme = this.body.classList.contains('light-mode') ? 'dark' : 'light';
+        this.applyTheme(newTheme);
+    }
+
+    applyTheme(theme) {
+        if (theme === 'light') {
+            this.body.classList.add('light-mode');
+        } else {
+            this.body.classList.remove('light-mode');
+        }
+        localStorage.setItem('theme', theme);
+    }
+}
+
 // Initialize on Load
 document.addEventListener('DOMContentLoaded', () => {
+    new ThemeManager();
     new MilkyWaySwarm();
     setTimeout(type, 1000);
 

@@ -2,17 +2,25 @@
    VARIABLES & THEME
    ======================================== */
 :root {
-    /* Color Palette */
-    --space-black: #000000;
-    --navy-deep: #0A1121;
-    --teal-accent: #2DD4BF;
-    --sky-accent: #38BDF8;
-    --glass-bg: rgba(255, 255, 255, 0.03);
+    /* Base Colors - Dark Theme (Default) */
+    --bg-base: #000000;
+    --bg-secondary: #0A1121;
+    --bg-section: #000000;
+    --bg-glass: rgba(255, 255, 255, 0.03);
+    --bg-navbar: rgba(10, 17, 33, 0.4);
+    --nav-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    --border-color: rgba(255, 255, 255, 0.05);
 
     /* Text Colors */
     --text-heading: #E5E7EB;
     --text-body: #9CA3AF;
     --text-muted: #6B7280;
+    --text-white: #FFFFFF;
+
+    /* Accents */
+    --teal-accent: #2DD4BF;
+    --sky-accent: #38BDF8;
+    --accent-glow: rgba(45, 212, 191, 0.12);
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, #2DD4BF 0%, #38BDF8 50%, #818CF8 100%);
@@ -20,7 +28,26 @@
 
     /* Others */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --nav-blur: blur(12px);
+    --nav-blur: blur(20px);
+}
+
+/* Light Mode Overrides */
+body.light-mode {
+    --bg-base: #F8FAFC;
+    --bg-secondary: #F1F5F9;
+    --bg-section: #FFFFFF;
+    --bg-glass: rgba(0, 0, 0, 0.04);
+    --bg-navbar: rgba(255, 255, 255, 0.9);
+    --nav-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    --border-color: rgba(0, 0, 0, 0.12);
+
+    --text-heading: #0F172A;
+    --text-body: #1E293B;
+    --text-muted: #64748B;
+    --text-white: #0F172A;
+
+    --accent-glow: rgba(45, 212, 191, 0.08);
+    --gradient-nebula: radial-gradient(circle at center, rgba(45, 212, 191, 0.08) 0%, rgba(56, 189, 248, 0.04) 50%, transparent 100%);
 }
 
 /* ========================================
@@ -38,7 +65,7 @@ html {
 
 body {
     font-family: 'Inter', 'Poppins', 'Space Grotesk', -apple-system, sans-serif;
-    background-color: var(--space-black);
+    background-color: var(--bg-base);
     color: var(--text-body);
     line-height: 1.6;
     overflow-x: hidden;
@@ -65,9 +92,10 @@ body {
     width: calc(100% - 2rem);
     max-width: 900px;
     height: 60px;
-    background: rgba(10, 17, 33, 0.4);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--bg-navbar);
+    backdrop-filter: var(--nav-blur);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--nav-shadow);
     border-radius: 100px;
     z-index: 1000;
     display: flex;
@@ -146,7 +174,7 @@ body {
     position: relative;
     overflow: hidden;
     padding: 120px 2rem 60px;
-    background-color: var(--space-black);
+    background-color: var(--bg-base);
     text-align: center;
 }
 
@@ -173,7 +201,7 @@ body {
     z-index: 20;
     max-width: 1000px;
     padding: 4rem;
-    background: radial-gradient(circle, rgba(45, 212, 191, 0.12) 0%, transparent 75%);
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 75%);
     border-radius: 50%;
     animation: heroReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
@@ -193,7 +221,7 @@ body {
 .hero-greeting {
     font-size: 1.1rem;
     font-weight: 500;
-    color: #FFFFFF;
+    color: var(--text-white);
     margin-bottom: 0.5rem;
     letter-spacing: 2px;
 }
@@ -1317,29 +1345,28 @@ section {
     align-items: center;
     gap: 1rem;
     padding: 1.2rem 2.5rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
 
 .tech-item:hover {
-    border-color: #2DD4BF;
+    border-color: var(--teal-accent);
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(45, 212, 191, 0.1);
+    box-shadow: 0 10px 30px var(--accent-glow);
 }
 
 .tech-item svg {
     width: 32px;
     height: 32px;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
 }
 
 .tech-item span {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #e4e6eb;
+    color: var(--text-heading);
     letter-spacing: 1px;
 }
 
