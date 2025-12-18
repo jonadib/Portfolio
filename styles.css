@@ -236,13 +236,15 @@ body {
 }
 
 .hero-title {
-    font-size: clamp(5rem, 18vw, 10rem);
-    font-weight: 400;
-    color: var(--text-heading);
-    line-height: 0.9;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: clamp(4rem, 15vw, 9rem);
+    font-weight: 700;
+    line-height: 1;
+    margin: 0.5rem 0;
     letter-spacing: -2px;
-    margin: 1.5rem 0 2.5rem;
+    text-transform: uppercase;
     position: relative;
+    z-index: 2;
 }
 
 .robotic {
@@ -261,11 +263,15 @@ body {
 
 @keyframes gradient-shift {
     0% {
-        background-position: 0% center;
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
     }
 
     100% {
-        background-position: 200% center;
+        background-position: 0% 50%;
     }
 }
 
