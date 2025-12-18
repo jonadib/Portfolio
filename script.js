@@ -108,7 +108,7 @@ class MilkyWaySwarm {
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
         this.mouse = { x: 0, y: 0, active: false };
-        this.numParticles = 200; // Denser galaxy
+        this.numParticles = 1200; // Massively increased for dense vortex
         this.angle = 0;
 
         this.init();
@@ -138,17 +138,16 @@ class MilkyWaySwarm {
     createParticle() {
         // Spiral galaxy distribution
         const angle = Math.random() * Math.PI * 2;
-        const radius = Math.random() * Math.max(this.canvas.width, this.canvas.height) * 0.5;
+        const radius = Math.random() * Math.max(this.canvas.width, this.canvas.height) * 0.45;
         return {
             x: this.canvas.width / 2 + Math.cos(angle) * radius,
-            y: this.canvas.height / 2 + Math.sin(angle) * (radius * 0.6), // Elliptical
-            size: Math.random() * 2 + 0.5,
+            y: this.canvas.height / 2 + Math.sin(angle) * (radius * 0.6),
+            size: Math.random() * 1.5 + 0.3, // Slightly smaller for better density look
             angle: angle,
             radius: radius,
-            speed: (Math.random() * 0.02) + 0.01, // Fast speed
-            distanceFromCenter: radius,
-            color: Math.random() > 0.4 ? '#2DD4BF' : '#A78BFA',
-            opacity: Math.random() * 0.5 + 0.2
+            speed: (Math.random() * 0.015) + 0.005, // Varied speeds for more "circulated" look
+            color: Math.random() > 0.5 ? '#2DD4BF' : (Math.random() > 0.5 ? '#A78BFA' : '#38BDF8'),
+            opacity: Math.random() * 0.6 + 0.2
         };
     }
 
