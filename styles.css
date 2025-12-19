@@ -258,7 +258,17 @@ body {
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 20px rgba(45, 212, 191, 0.4));
     display: inline-block;
-    animation: gradient-shift 8s linear infinite;
+    animation: hue-cycle 4s linear infinite;
+}
+
+@keyframes hue-cycle {
+    0% {
+        filter: hue-rotate(0deg) drop-shadow(0 0 20px rgba(45, 212, 191, 0.4));
+    }
+
+    100% {
+        filter: hue-rotate(360deg) drop-shadow(0 0 20px rgba(45, 212, 191, 0.4));
+    }
 }
 
 @keyframes gradient-shift {
