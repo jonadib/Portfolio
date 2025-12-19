@@ -179,12 +179,56 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
         });
 
-        // Close menu when a link is clicked
+        // Mobile View Switching & Menu Close
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
+                // Close menu
                 menuToggle.classList.remove('active');
                 navMenu.classList.remove('active');
                 document.body.style.overflow = 'auto';
+
+                // View Switching for Mobile
+                if (window.innerWidth <= 768) {
+                    const targetId = link.getAttribute('href');
+                    const homeSection = document.getElementById('home');
+                    const marqueeSection = document.querySelector('.tech-marquee-section');
+                    const allSections = document.querySelectorAll('section');
+                    const footer = document.querySelector('.footer');
+
+                    if (targetId === '#home') {
+                        // SHOW Landing (Home + Marquee)
+                        if (homeSection) homeSection.classList.remove('landing-hidden');
+                        if (marqueeSection) marqueeSection.classList.remove('landing-hidden');
+
+                        // HIDE Other Sections
+                        allSections.forEach(sec => {
+                            if (sec.id !== 'home') sec.classList.remove('section-visible');
+                        });
+                        if (footer) footer.classList.remove('section-visible');
+
+                        window.scrollTo(0, 0);
+                    } else {
+                        // HIDE Landing
+                        if (homeSection) homeSection.classList.add('landing-hidden');
+                        if (marqueeSection) marqueeSection.classList.add('landing-hidden');
+
+                        // HIDE all other sections first (reset)
+                        allSections.forEach(sec => {
+                            sec.classList.remove('section-visible');
+                        });
+
+                        // SHOW Target Section
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            targetSection.classList.add('section-visible');
+                        }
+
+                        // SHOW Footer
+                        if (footer) footer.classList.add('section-visible');
+
+                        window.scrollTo(0, 0);
+                    }
+                }
             });
         });
     }

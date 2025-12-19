@@ -1290,12 +1290,15 @@ section {
    TECH MARQUEE SECTION
    ======================================== */
 .tech-marquee-section {
-    padding: 6rem 0;
-    background: rgba(10, 17, 33, 0.3);
+    padding: 2rem 0;
+    /* Solid background to hide particles */
+    background: var(--bg-base);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     overflow: hidden;
+    /* Position above the fixed particle canvas */
     position: relative;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 10;
 }
 
 .marquee-container {
@@ -1406,4 +1409,35 @@ section {
 .tech-marquee-section::after {
     right: 0;
     background: linear-gradient(to left, #05080F, transparent);
+}
+
+/* ========================================
+   MOBILE APP-LIKE VIEW SWITCHING
+   ======================================== */
+@media (max-width: 768px) {
+
+    /* Initially hide all "page" sections except Home/Landing */
+    #about,
+    #skills,
+    #projects,
+    #contact,
+    footer.footer {
+        display: none;
+    }
+
+    /* Ensure Home and Marquee are visible by default */
+    #home,
+    .tech-marquee-section {
+        display: block;
+    }
+
+    /* Utility to show sections via JS */
+    .section-visible {
+        display: block !important;
+    }
+
+    /* Utility to hide Home/Marquee via JS */
+    .landing-hidden {
+        display: none !important;
+    }
 }
