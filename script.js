@@ -48,7 +48,7 @@ class MilkyWaySwarm {
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
         this.mouse = { x: 0, y: 0, active: false };
-        this.numParticles = 3000; // Extreme density
+        this.numParticles = 5000; // Extreme density
         this.angle = 0;
 
         this.init();
@@ -93,7 +93,7 @@ class MilkyWaySwarm {
 
     resize() {
         this.canvas.width = window.innerWidth;
-        this.canvas.height = this.canvas.parentElement.offsetHeight;
+        this.canvas.height = window.innerHeight;
     }
 
     createParticle() {
