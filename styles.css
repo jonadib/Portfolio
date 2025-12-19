@@ -1411,30 +1411,3 @@ section {
     background: linear-gradient(to left, #05080F, transparent);
 }
 
-@media (max-width: 768px) {
-
-    /* Initially hide all "page" sections except Home/Landing */
-    #about,
-    #skills,
-    #projects,
-    #contact,
-    footer.footer {
-        display: none;
-    }
-
-    /* Ensure Home and Marquee are visible by default */
-    #home,
-    .tech-marquee-section {
-        display: block;
-    }
-
-    /* Utility to show sections via JS */
-    .section-visible {
-        display: block !important;
-    }
-
-    /* Utility to hide Home/Marquee via JS */
-    .landing-hidden {
-        display: none !important;
-    }
-}
