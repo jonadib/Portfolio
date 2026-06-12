@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 export default function Typewriter() {
   const [text, setText] = useState('');
-  const phrases = ['Software Engineer', 'Full Stack Developer', 'Problem Solver', 'Product Designer'];
+  const phrases = ['Software Engineer', 'Frontend Developer', 'Problem Solver', 'Product Designer'];
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 

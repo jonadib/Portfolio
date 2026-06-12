@@ -12,6 +12,8 @@ const skills = [
   { name: 'Spline (3D)', color: '#B583FF' },
   { name: 'Lovable', color: '#FF6B9D' },
   { name: 'Vercel', color: '#FFFFFF' },
+  { name: 'Lens Studio (AR - Snapchat)', color: '#FFFC00' },
+  { name: 'House Effects (AR - TikTok)', color: '#25F4EE' },
 ];
 
 export default function Skills() {
