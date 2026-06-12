@@ -17,38 +17,38 @@ export default function Projects() {
           </div>
 
           <div className="projects-grid">
-            {/* Project Card 1: DS Visualizer */}
+            {/* Project Card 1: Pixelency */}
             <div className="project-card">
               <div className="project-header">
-                <h3>DS Visualizer | Algorithm Visualization Tool</h3>
-                <span className="category-badge">WEB APP</span>
+                <h3>Pixelency | Digital Design Agency</h3>
+                <span className="category-badge">AGENCY</span>
               </div>
               <p className="project-teaser">
-                Interactive platform helping students understand complex data structures
-                and algorithms through real-time animations.
+                A professional digital design agency showcasing innovative brand identity,
+                web design, and creative solutions for modern businesses.
               </p>
 
               <div className="project-tech">
-                <span className="tech-tag">React</span>
-                <span className="tech-tag">Canvas API</span>
-                <span className="tech-tag">Vite</span>
+                <span className="tech-tag">Next.js</span>
+                <span className="tech-tag">TypeScript</span>
+                <span className="tech-tag">Framer Motion</span>
                 <span className="tech-tag">Tailwind CSS</span>
                 <span className="tech-tag">+3 more</span>
               </div>
 
               <ul className="project-highlights">
-                <li>Interactive visualization of Sorting, Pathfinding, and Tree algorithms</li>
-                <li>Real-time animation control (play, pause, speed adjustment)</li>
-                <li>Step-by-step code execution tracing for better understanding</li>
+                <li>Stunning portfolio showcasing award-winning design projects</li>
+                <li>Interactive case studies with detailed project breakdowns</li>
+                <li>Smooth animations and engaging user experience design</li>
               </ul>
 
               <div className="project-footer">
-                <span className="footer-label">WEB</span>
+                <span className="footer-label">AGENCY</span>
                 <div className="footer-links">
-                  <a href="https://jonadib.github.io/DS-Visualizer/" target="_blank" rel="noreferrer">
+                  <a href="https://pixelency.vercel.app/" target="_blank" rel="noreferrer">
                     Live Demo ↗
                   </a>
-                  <a href="https://github.com/jonadib/DS-Visualizer" target="_blank" rel="noreferrer">
+                  <a href="https://github.com" target="_blank" rel="noreferrer">
                     Code ↗
                   </a>
                 </div>
@@ -131,39 +131,39 @@ export default function Projects() {
               </div>
             </div>
 
-            {/* Project Card 4: RUCSU */}
+            {/* Project Card 4: Adib Motors */}
             <div className="project-card">
               <div className="project-header">
-                <h3>RUCSU | Union Management Portal</h3>
-                <span className="category-badge">GOVT / UNION</span>
+                <h3>Adib Motors | Bike Racer Stories</h3>
+                <span className="category-badge">STORYTELLING</span>
               </div>
               <p className="project-teaser">
-                Official interface for the Rajshahi University Central Students' Union,
-                streamlining student services.
+                An immersive storytelling platform celebrating the journey, achievements,
+                and passion of professional bike racers through dynamic narratives.
               </p>
 
               <div className="project-tech">
-                <span className="tech-tag">React</span>
-                <span className="tech-tag">Framer Motion</span>
-                <span className="tech-tag">Node.js</span>
-                <span className="tech-tag">PostgreSQL</span>
+                <span className="tech-tag">Next.js</span>
+                <span className="tech-tag">TypeScript</span>
+                <span className="tech-tag">Three.js</span>
+                <span className="tech-tag">Tailwind CSS</span>
                 <span className="tech-tag">+3 more</span>
               </div>
 
               <ul className="project-highlights">
-                <li>Accessibility-focused UI for inclusive student participation</li>
-                <li>Digital service request tracking and union announcement portal</li>
-                <li>Secure administrative dashboard for union representatives</li>
+                <li>Engaging race highlights and career milestone documentation</li>
+                <li>Interactive 3D visualizations of track layouts and race data</li>
+                <li>Photo galleries and video integration for immersive storytelling</li>
               </ul>
 
               <div className="project-footer">
-                <span className="footer-label">UNION</span>
+                <span className="footer-label">STORY</span>
                 <div className="footer-links">
-                  <a href="https://jonadib.github.io/RUCSU/" target="_blank" rel="noreferrer">
+                  <a href="https://adib-motors.vercel.app/" target="_blank" rel="noreferrer">
                     Live Demo ↗
                   </a>
-                  <a href="https://github.com/jonadib/RUCSU" target="_blank" rel="noreferrer">
-                    Codebase ↗
+                  <a href="https://github.com" target="_blank" rel="noreferrer">
+                    Code ↗
                   </a>
                 </div>
               </div>

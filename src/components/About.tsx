@@ -12,7 +12,7 @@ export default function About() {
               I'm a passionate Computer Science student and Software Engineer focused on building impactful
               digital solutions. My work revolves around creating platforms that solve real-world problems for
               students and communities, ranging from marketplaces to interactive learning tools. I specialize
-              in full-stack development and enjoy diving into the fundamentals of algorithms and data
+              in frontend development and enjoy diving into the fundamentals of algorithms and data
               structures.
             </p>
 
@@ -27,11 +27,11 @@ export default function About() {
               </div>
               <div className="detail-item">
                 <h4>Current Focus</h4>
-                <p>Full-Stack Web & Algorithm Visualization</p>
+                <p>Machine Learning & Algorithm Visualization</p>
               </div>
               <div className="detail-item">
                 <h4>Interests</h4>
-                <p>Data Structures, Web Security, E-Commerce</p>
+                <p>Data Structures, Machine Learning, Web Development</p>
               </div>
             </div>
           </div>
